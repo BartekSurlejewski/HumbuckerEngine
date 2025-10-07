@@ -156,9 +156,15 @@
   <ItemGroup>
     <ClCompile Include="AlgorithmsImplementations.cpp" />
     <ClCompile Include="CppSandbox.cpp" />
+    <ClCompile Include="DiningPhilosophers\DiningPhilosophersManager.cpp" />
+    <ClCompile Include="DiningPhilosophers\Fork.cpp" />
+    <ClCompile Include="DiningPhilosophers\Philosopher.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AlgorithmsImplementations.h" />
+    <ClInclude Include="DiningPhilosophers\DiningPhilosophersManager.h" />
+    <ClInclude Include="DiningPhilosophers\Fork.h" />
+    <ClInclude Include="DiningPhilosophers\Philosopher.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
