@@ -1,18 +1,34 @@
 cmake_minimum_required(VERSION 4.0)
 project(CppSandbox)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
-include_directories(CppSandbox)
-include_directories(CppSandbox/DiningPhilosophers)
+include(FetchContent)
+# --- GLFW ---
+FETCHCONTENT_DECLARE(
+        glfw
+        GIT_REPOSITORY https://github.com/glfw/glfw.git
+)
+FETCHCONTENT_MAKEAVAILABLE(glfw)
 
-add_executable(CppSandbox
-        CppSandbox/DiningPhilosophers/DiningPhilosophersManager.cpp
-        CppSandbox/DiningPhilosophers/DiningPhilosophersManager.h
-        CppSandbox/DiningPhilosophers/Fork.cpp
-        CppSandbox/DiningPhilosophers/Fork.h
-        CppSandbox/DiningPhilosophers/Philosopher.cpp
-        CppSandbox/DiningPhilosophers/Philosopher.h
-        CppSandbox/AlgorithmsImplementations.cpp
-        CppSandbox/AlgorithmsImplementations.h
-        CppSandbox/CppSandbox.cpp)
+# --- GLAD ---
+FETCHCONTENT_DECLARE(
+        glad
+        GIT_REPOSITORY https://github.com/Dav1dde/glad.git
+        GIT_TAG        master
+)
+FETCHCONTENT_MAKEAVAILABLE(glad)
+
+find_package(OpenGL REQUIRED)
+
+include_directories(HumbuckerEngine)
+include_directories(HumbuckerEngine/DiningPhilosophers)
+
+add_executable(HumbuckerEngine
+        HumbuckerEngine/Application.cpp
+        HumbuckerEngine/AlgorithmsImplementations.cpp
+        HumbuckerEngine/Rendering/OpenGLRenderer/OpenGLRenderer.cpp
+        HumbuckerEngine/Rendering/OpenGLRenderer/Window.cpp
+        HumbuckerEngine/Rendering/OpenGLRenderer/Window.h)
+
+target_link_libraries(HumbuckerEngine PRIVATE glfw glad OpenGL::GL)

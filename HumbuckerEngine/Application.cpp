@@ -7,6 +7,7 @@
 #include <sstream>
 
 #include "AlgorithmsImplementations.h"
+#include "Rendering/OpenGLRenderer/Window.h"
 
 // Takes string and returns it with all words that have at least five letters reversed
 static std::string spinWords(const std::string &str)
@@ -41,40 +42,12 @@ int main(int argc, char *argv[])
 	using namespace std::literals::chrono_literals;
 
 	std::cout << "Hello\n";
-
 	// std::this_thread::sleep_for(1s);
 
+	Window window;
+	window.Init();
 
-	const auto impl = new AlgorithmsImplementations();
-	std::vector<int> numbers;
-
-	for (int i = 0; i < 10000; ++i)
-	{
-		numbers.push_back(impl->GetRandomNumber(-1000000, 1000000));
-	}
-
-	// TODO: implement timer struct
-	auto quickSortStartTime = std::chrono::high_resolution_clock::now();
-
-	// Call quicksort on a separate thread
-	std::thread quickSortThread(&AlgorithmsImplementations::Quicksort, impl, numbers);
-
-	auto selectionSortStartTime = std::chrono::high_resolution_clock::now();
-
-	// Call selection sort on a separate thread
-	std::thread selectionSortThread(&AlgorithmsImplementations::SelectionSort, impl, numbers);
-
-	quickSortThread.join();
-	std::chrono::duration<float> quickSortDuration = std::chrono::high_resolution_clock::now() - quickSortStartTime;
-
-	selectionSortThread.join();
-	std::chrono::duration<float> selectionSortDuration =
-			std::chrono::high_resolution_clock::now() - selectionSortStartTime;
-
-	std::cout << "Quick Sort Duration: " << quickSortDuration.count() * 1000.0 << "ms" << std::endl;
-	std::cout << "Selection Sort Duration: " << selectionSortDuration.count() * 1000.0 << "ms" << std::endl;
-
-	std::cout << spinWords("Hey fellow warriors");
+	std::cin.get();
 
 	return 0;
 }
