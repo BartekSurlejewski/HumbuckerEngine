@@ -1,27 +1,32 @@
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include "Window.h"
+#include "GL_Window.h"
 
 #include <iostream>
 #include <ostream>
 
-#include "../../../cmake-build-debug/_deps/glfw-src/include/GLFW/glfw3.h"
+#include "Utils/Settings.h"
 
-void Window::Init()
+int Rendering_GL::GL_Window::Init()
 {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	GLFWwindow* window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+	window = glfwCreateWindow(DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT, "Hello World", NULL, NULL);
 
 	if (window == NULL)
 	{
 		std::cout << "Failed to create GLFW window." << std::endl;
 		glfwTerminate();
-		return;
+		return -1;
 	}
 
 	glfwMakeContextCurrent(window);
+
+	return 0;
+}
+
+void Rendering_GL::GL_Window::Cleanup() const
+{
+	delete &window;
 }

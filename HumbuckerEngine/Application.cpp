@@ -2,12 +2,10 @@
 #include <string>
 #include <chrono>
 #include <mutex>
-#include <thread>
-#include <vector>
 #include <sstream>
 
-#include "AlgorithmsImplementations.h"
-#include "Rendering/OpenGLRenderer/Window.h"
+#include "EngineModules/IRenderer.h"
+#include "Rendering/OpenGLRenderer/OpenGLRenderer.h"
 
 // Takes string and returns it with all words that have at least five letters reversed
 static std::string spinWords(const std::string &str)
@@ -21,7 +19,8 @@ static std::string spinWords(const std::string &str)
 		if (word.length() < 5)
 		{
 			result += word + " ";
-		} else
+		}
+		else
 		{
 			std::string revWord = std::string(word.rbegin(), word.rend());
 			result += revWord + " ";
@@ -44,10 +43,24 @@ int main(int argc, char *argv[])
 	std::cout << "Hello\n";
 	// std::this_thread::sleep_for(1s);
 
-	Window window;
-	window.Init();
+	// Create and initialize the renderer
+	IRenderer *renderer = new Rendering_GL::OpenGLRenderer();
+	if (renderer->Init() == 0)
+	{
+		std::cout << "Renderer initialized successfully." << std::endl;
+		std::cout << "Renderer details: " << renderer->GetInfo() << std::endl;
+	}
+	else
+	{
+		std::cout << "Failed to initialize renderer." << std::endl;
+	}
 
-	std::cin.get();
+	// Renderer loop
+	while (!renderer->ShouldClose())
+	{
+		renderer->Render();
+	}
+
 
 	return 0;
 }

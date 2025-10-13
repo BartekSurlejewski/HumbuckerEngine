@@ -28,7 +28,7 @@ add_executable(HumbuckerEngine
         HumbuckerEngine/Application.cpp
         HumbuckerEngine/AlgorithmsImplementations.cpp
         HumbuckerEngine/Rendering/OpenGLRenderer/OpenGLRenderer.cpp
-        HumbuckerEngine/Rendering/OpenGLRenderer/Window.cpp
-        HumbuckerEngine/Rendering/OpenGLRenderer/Window.h)
+        HumbuckerEngine/Rendering/OpenGLRenderer/GL_Window.cpp
+        HumbuckerEngine/Rendering/OpenGLRenderer/GL_Window.h)
 
 target_link_libraries(HumbuckerEngine PRIVATE glfw glad OpenGL::GL)
