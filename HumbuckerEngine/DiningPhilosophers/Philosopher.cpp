@@ -5,12 +5,6 @@
 
 void DiningPhilosophers::Philosopher::PickUpFork(Fork* fork)
 {
-    if (!fork->isOnTheTable)
-    {
-        // This fork has already been picked up
-        return;
-    }
-
     if (pickedUpForks.size() >= 2)
     {
         // This philosopher has already picked up two forks
@@ -24,7 +18,6 @@ void DiningPhilosophers::Philosopher::PickUpFork(Fork* fork)
     }
 
     pickedUpForks.insert(fork);
-    fork->isOnTheTable = false;
 }
 
 void DiningPhilosophers::Philosopher::PutDownFork(Fork* fork)
@@ -36,7 +29,6 @@ void DiningPhilosophers::Philosopher::PutDownFork(Fork* fork)
     }
 
     pickedUpForks.erase(fork);
-    fork->isOnTheTable = true;
 }
 
 void DiningPhilosophers::Philosopher::Consume()

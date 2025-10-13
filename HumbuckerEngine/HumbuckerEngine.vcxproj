@@ -28,6 +28,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <RootNamespace>HumbuckerEngine</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -155,16 +156,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AlgorithmsImplementations.cpp" />
-    <ClCompile Include="CppSandbox.cpp" />
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="DiningPhilosophers\DiningPhilosophersManager.cpp" />
     <ClCompile Include="DiningPhilosophers\Fork.cpp" />
     <ClCompile Include="DiningPhilosophers\Philosopher.cpp" />
+    <ClCompile Include="Rendering\OpenGLRenderer\OpenGLRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AlgorithmsImplementations.h" />
     <ClInclude Include="DiningPhilosophers\DiningPhilosophersManager.h" />
     <ClInclude Include="DiningPhilosophers\Fork.h" />
     <ClInclude Include="DiningPhilosophers\Philosopher.h" />
+    <ClInclude Include="EngineModules\IRenderer.h" />
+    <ClInclude Include="Rendering\OpenGLRenderer\OpenGLRenderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

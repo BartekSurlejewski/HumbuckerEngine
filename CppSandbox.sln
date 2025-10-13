@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppSandbox", "CppSandbox\CppSandbox.vcxproj", "{2956655C-63B0-4902-A89F-A7B1DCDA375F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HumbuckerEngine", "HumbuckerEngine\HumbuckerEngine.vcxproj", "{2956655C-63B0-4902-A89F-A7B1DCDA375F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
