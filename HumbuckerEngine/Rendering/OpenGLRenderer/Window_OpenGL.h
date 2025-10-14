@@ -5,10 +5,10 @@
 namespace Rendering_GL
 {
 	// Handles window using GLFW
-	class GL_Window
+	class Window_OpenGL
 	{
 	public:
-		GL_Window() = default;
+		Window_OpenGL() = default;
 		int Init();
 		void Cleanup() const;
 

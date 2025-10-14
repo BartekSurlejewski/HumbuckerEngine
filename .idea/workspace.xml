@@ -6,6 +6,7 @@
   <component name="BackendCodeEditorMiscSettings">
     <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="8" type="long" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/LiveTemplatesHousekeeping/HotspotSessionHintIsShown/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/OptionsDialog/SelectedPageId/@EntryValue" value="CppFormatterOtherPage" type="string" />
   </component>
   <component name="CMakePresetLoader">{
@@ -34,16 +35,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9ed4bd6-2af5-482f-a9df-ac4815e069f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/GL_Window.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Utils/Settings.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/EngineModules/IInputManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Input/InputConstants.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Input/InputManager_OpenGL.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Input/InputManager_OpenGL.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Application.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HumbuckerEngine/EngineModules/IRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/EngineModules/IRenderer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/OpenGLRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/OpenGLRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/OpenGLRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/OpenGLRenderer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/GL_Window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Window.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/GL_Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Window_OpenGL.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/GL_Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Window_OpenGL.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/OpenGLRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Renderer_OpenGL.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/OpenGLRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Renderer_OpenGL.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +71,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="33mOSjW74la35NBE5a0hTab4bRd" />
+  <component name="ProjectStatusUIService"><![CDATA[{
+  "uiKindId": "Widget"
+}]]></component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -93,7 +100,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "fileTemplates",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C++",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -159,7 +166,9 @@
       <workItem from="1760106574486" duration="864000" />
       <workItem from="1760349800389" duration="138000" />
       <workItem from="1760349955673" duration="3106000" />
-      <workItem from="1760353136815" duration="6954000" />
+      <workItem from="1760353136815" duration="7608000" />
+      <workItem from="1760367707739" duration="283000" />
+      <workItem from="1760430482794" duration="4883000" />
     </task>
     <servers />
   </component>
@@ -175,19 +184,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/HumbuckerEngine/Application.cpp</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/GL_Window.h</url>
-          <line>1</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/GL_Window.cpp</url>
+          <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Window_OpenGL.cpp</url>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

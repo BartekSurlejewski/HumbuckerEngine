@@ -1,15 +1,16 @@
-﻿#include "OpenGLRenderer.h"
+﻿#include "Renderer_OpenGL.h"
 
 #include <iostream>
 
+#include "Input/InputManager_OpenGL.h"
 #include "Utils/Settings.h"
 
 void FramebufferSizeCallback(GLFWwindow *window, int width, int height);
 
-int Rendering_GL::OpenGLRenderer::Init()
+int Rendering_GL::Renderer_OpenGL::Init()
 {
 	// 1. Create and initialize a window
-	window = std::make_unique<GL_Window>();
+	window = std::make_unique<Window_OpenGL>();
 	if (window != NULL)
 	{
 		if (window->Init() == -1)
@@ -32,26 +33,34 @@ int Rendering_GL::OpenGLRenderer::Init()
 	return 0;
 }
 
-void Rendering_GL::OpenGLRenderer::Render()
+void Rendering_GL::Renderer_OpenGL::Tick()
 {
-	glfwSwapBuffers(window->getGLFWWindow());
+	glClearColor(0.3f, 0.5f, 0.1f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+
 	glfwPollEvents();
+	glfwSwapBuffers(window->getGLFWWindow());
 }
 
-void Rendering_GL::OpenGLRenderer::Terminate()
+void Rendering_GL::Renderer_OpenGL::Terminate()
 {
 	window->Cleanup();
 	glfwTerminate();
 }
 
-bool Rendering_GL::OpenGLRenderer::ShouldClose()
+bool Rendering_GL::Renderer_OpenGL::ShouldClose()
 {
 	return glfwWindowShouldClose(window->getGLFWWindow());
 }
 
-std::string Rendering_GL::OpenGLRenderer::GetInfo()
+std::string Rendering_GL::Renderer_OpenGL::getInfo()
 {
 	return "OpenGL Renderer\n";
+}
+
+IInputManager *Rendering_GL::Renderer_OpenGL::CreateInputManager() const
+{
+	return new Input::InputManager_OpenGL(this->window->getGLFWWindow());
 }
 
 void FramebufferSizeCallback(GLFWwindow *window, int width, int height)

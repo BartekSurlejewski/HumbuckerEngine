@@ -4,8 +4,10 @@
 #include <mutex>
 #include <sstream>
 
+#include "EngineModules/IInputManager.h"
 #include "EngineModules/IRenderer.h"
-#include "Rendering/OpenGLRenderer/OpenGLRenderer.h"
+#include "Rendering/OpenGLRenderer/Renderer_OpenGL.h"
+#include "Input/InputManager_OpenGL.h"
 
 // Takes string and returns it with all words that have at least five letters reversed
 static std::string spinWords(const std::string &str)
@@ -40,25 +42,36 @@ int main(int argc, char *argv[])
 {
 	using namespace std::literals::chrono_literals;
 
+	IRenderer *renderer;
+	IInputManager *inputManager;
+
 	std::cout << "Hello\n";
 	// std::this_thread::sleep_for(1s);
 
 	// Create and initialize the renderer
-	IRenderer *renderer = new Rendering_GL::OpenGLRenderer();
+	renderer = new Rendering_GL::Renderer_OpenGL();
+
 	if (renderer->Init() == 0)
 	{
 		std::cout << "Renderer initialized successfully." << std::endl;
-		std::cout << "Renderer details: " << renderer->GetInfo() << std::endl;
+		std::cout << "Renderer details: " << renderer->getInfo() << std::endl;
 	}
 	else
 	{
 		std::cout << "Failed to initialize renderer." << std::endl;
 	}
 
+	inputManager = dynamic_cast<Rendering_GL::Renderer_OpenGL*>(renderer)->CreateInputManager();
+
 	// Renderer loop
 	while (!renderer->ShouldClose())
 	{
-		renderer->Render();
+		if (inputManager->GetKeyDown(InputConstants::KeyCode::ESCAPE))
+		{
+			std::cout << "Escape Pressed." << std::endl;
+		}
+
+		renderer->Tick();
 	}
 
 

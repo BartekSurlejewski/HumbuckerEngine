@@ -1,11 +1,11 @@
-#include "GL_Window.h"
+#include "Window_OpenGL.h"
 
 #include <iostream>
 #include <ostream>
 
 #include "Utils/Settings.h"
 
-int Rendering_GL::GL_Window::Init()
+int Rendering_GL::Window_OpenGL::Init()
 {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -26,7 +26,7 @@ int Rendering_GL::GL_Window::Init()
 	return 0;
 }
 
-void Rendering_GL::GL_Window::Cleanup() const
+void Rendering_GL::Window_OpenGL::Cleanup() const
 {
 	delete &window;
 }
