@@ -1,9 +1,9 @@
-﻿#include "AlgorithmsImplementations.h"
+﻿#include "HumbuckerUtils.h"
 #include <iostream>
 #include <list>
 #include <mutex>
 
-AlgorithmsImplementations::AlgorithmsImplementations()
+HumbuckerUtils::HumbuckerUtils()
 {
 	mersenneTwister = std::mt19937(randomDevice());
 }
@@ -16,7 +16,7 @@ void ThreadSafeMessage(std::string message)
 	coutMutex.unlock();
 }
 
-std::vector<int> AlgorithmsImplementations::SelectionSort(const std::vector<int> &numbersToSort)
+std::vector<int> HumbuckerUtils::SelectionSort(const std::vector<int> &numbersToSort)
 {
 	int numbersCount = numbersToSort.size();
 	std::vector<int> numbersToSortCopy(numbersToSort);
@@ -36,7 +36,7 @@ std::vector<int> AlgorithmsImplementations::SelectionSort(const std::vector<int>
 	return sortedVector;
 }
 
-std::vector<int> AlgorithmsImplementations::Quicksort(const std::vector<int> &numbersToSort)
+std::vector<int> HumbuckerUtils::Quicksort(const std::vector<int> &numbersToSort)
 {
 	int numbersAmount = numbersToSort.size();
 	if (numbersAmount < 2)
@@ -77,7 +77,7 @@ std::vector<int> AlgorithmsImplementations::Quicksort(const std::vector<int> &nu
 	return result;
 }
 
-int AlgorithmsImplementations::GetSmallest(const std::vector<int> &numbers) const
+int HumbuckerUtils::GetSmallest(const std::vector<int> &numbers) const
 {
 	int smallestNumberIndex = 0;
 	for (int i = 1; i < numbers.size(); ++i)

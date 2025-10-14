@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+#include "Dev/Development_OpenGL.h"
 #include "Input/InputManager_OpenGL.h"
 #include "Utils/Settings.h"
 
@@ -30,13 +31,18 @@ int Rendering_GL::Renderer_OpenGL::Init()
 	glViewport(0, 0, DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT);
 	glfwSetFramebufferSizeCallback(window->getGLFWWindow(), FramebufferSizeCallback);
 
+	Development_OpenGL::PrepareBuffers();
+
 	return 0;
 }
 
 void Rendering_GL::Renderer_OpenGL::Tick()
 {
-	glClearColor(0.3f, 0.5f, 0.1f, 1.0f);
+	glClearColor(0.5f, 0.3f, 0.8f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
+
+	// Actual rendering code
+	Development_OpenGL::RenderTriangle();
 
 	glfwPollEvents();
 	glfwSwapBuffers(window->getGLFWWindow());

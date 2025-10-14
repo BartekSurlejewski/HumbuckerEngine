@@ -2,10 +2,10 @@
 #include <random>
 #include <vector>
 
-class AlgorithmsImplementations
+class HumbuckerUtils
 {
 public:
-    AlgorithmsImplementations();
+    HumbuckerUtils();
     std::vector<int> SelectionSort(const std::vector<int>& numbersToSort);
     std::vector<int> Quicksort(const std::vector<int>& numbersToSort);
 
