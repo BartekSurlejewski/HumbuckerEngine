@@ -35,13 +35,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9ed4bd6-2af5-482f-a9df-ac4815e069f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/Mesh.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/RenderingData.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/RenderingPreProcessor.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/RenderingPreProcessor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/AlgorithmsImplementations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Utils/HumbuckerUtils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/AlgorithmsImplementations.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Utils/HumbuckerUtils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/Mesh.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Renderer_OpenGL.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Renderer_OpenGL.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,11 +52,76 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ClangdSettings">
+    <option name="clangTidyViaClangd" value="false" />
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -66,9 +133,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="33mOSjW74la35NBE5a0hTab4bRd" />
-  <component name="ProjectStatusUIService"><![CDATA[{
-  "uiKindId": "Widget"
-}]]></component>
+  <component name="ProjectStatusUIService">{
+  &quot;uiKindId&quot;: &quot;Widget&quot;
+}</component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -102,6 +169,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projekty\CppSandbox\HumbuckerEngine\Rendering" />
+      <recent name="D:\Projekty\CppSandbox\HumbuckerEngine\Rendering\Data" />
       <recent name="D:\Projekty\CppSandbox\HumbuckerEngine\Rendering\OpenGLRenderer\Dev" />
       <recent name="D:\Projekty\CppSandbox\HumbuckerEngine\Utils" />
     </key>
@@ -164,7 +233,9 @@
       <workItem from="1760349955673" duration="3106000" />
       <workItem from="1760353136815" duration="7608000" />
       <workItem from="1760367707739" duration="283000" />
-      <workItem from="1760430482794" duration="11699000" />
+      <workItem from="1760430482794" duration="12907000" />
+      <workItem from="1760463299626" duration="277000" />
+      <workItem from="1760513936582" duration="11881000" />
     </task>
     <servers />
   </component>
@@ -182,6 +253,21 @@
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Window_OpenGL.cpp</url>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/RenderingPreProcessor.cpp</url>
+          <line>58</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.cpp</url>
+          <line>53</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/RenderingPreProcessor.cpp</url>
+          <line>63</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

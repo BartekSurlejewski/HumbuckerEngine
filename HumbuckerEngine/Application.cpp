@@ -7,7 +7,7 @@
 #include "EngineModules/IInputManager.h"
 #include "EngineModules/IRenderer.h"
 #include "Rendering/OpenGLRenderer/Renderer_OpenGL.h"
-#include "Input/InputManager_OpenGL.h"
+#include "Rendering/OpenGLRenderer/Dev/Development_OpenGL.h"
 
 // Takes string and returns it with all words that have at least five letters reversed
 static std::string spinWords(const std::string &str)
@@ -61,7 +61,9 @@ int main(int argc, char *argv[])
 		std::cout << "Failed to initialize renderer." << std::endl;
 	}
 
-	inputManager = dynamic_cast<Rendering_GL::Renderer_OpenGL*>(renderer)->CreateInputManager();
+	inputManager = dynamic_cast<Rendering_GL::Renderer_OpenGL *>(renderer)->CreateInputManager();
+
+	Rendering_GL::Development_OpenGL::PrepareBuffers();
 
 	// Renderer loop
 	while (!renderer->ShouldClose())
