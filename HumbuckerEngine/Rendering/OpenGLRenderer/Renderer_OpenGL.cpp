@@ -42,7 +42,7 @@ namespace Rendering_GL
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// Actual rendering code
-		Development_OpenGL::RenderTriangle();
+		Development_OpenGL::Tick();
 
 		glfwSwapBuffers(window->getGLFWWindow());
 		glfwPollEvents();

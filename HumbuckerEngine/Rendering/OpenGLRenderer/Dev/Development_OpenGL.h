@@ -7,7 +7,7 @@ namespace Rendering_GL
 	{
 		public:
 		static void PrepareBuffers();
-		static void RenderTriangle();
+		static void Tick();
 		private:
 	};
 }

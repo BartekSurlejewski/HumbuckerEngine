@@ -1,12 +1,10 @@
 ﻿#include "HumbuckerUtils.h"
+
+#include <fstream>
 #include <iostream>
 #include <list>
 #include <mutex>
-
-HumbuckerUtils::HumbuckerUtils()
-{
-	mersenneTwister = std::mt19937(randomDevice());
-}
+#include <sstream>
 
 void ThreadSafeMessage(std::string message)
 {
@@ -57,10 +55,12 @@ std::vector<int> HumbuckerUtils::Quicksort(const std::vector<int> &numbersToSort
 		if (number < pivot)
 		{
 			less.push_back(number);
-		} else if (number > pivot)
+		}
+		else if (number > pivot)
 		{
 			greater.push_back(number);
-		} else if (number == pivot)
+		}
+		else if (number == pivot)
 		{
 			equalCount++;
 		}
@@ -77,7 +77,32 @@ std::vector<int> HumbuckerUtils::Quicksort(const std::vector<int> &numbersToSort
 	return result;
 }
 
-int HumbuckerUtils::GetSmallest(const std::vector<int> &numbers) const
+std::string HumbuckerUtils::GetTextFromFile(const std::string& filePath)
+{
+	std::string fileText;
+	std::ifstream file;
+
+	// Ensure the filestream can throw exceptions
+	file.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+
+	try
+	{
+		file.open(filePath);
+		std::stringstream stringStream;
+
+		stringStream << file.rdbuf();
+		file.close();
+		fileText = stringStream.str();
+	}
+	catch (std::ifstream::failure exception)
+	{
+		std::cout << "Failed to read file " << filePath << std::endl << "Exception: " << exception.what() << std::endl;
+	}
+
+	return fileText;
+}
+
+int HumbuckerUtils::GetSmallest(const std::vector<int> &numbers)
 {
 	int smallestNumberIndex = 0;
 	for (int i = 1; i < numbers.size(); ++i)

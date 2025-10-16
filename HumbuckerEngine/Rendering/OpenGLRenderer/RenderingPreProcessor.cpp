@@ -30,9 +30,17 @@ namespace Rendering_GL
 		glBindBuffer(GL_ARRAY_BUFFER, mesh.VBO);
 		glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
 
-		// 3. then set the vertex attributes pointers
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *) 0);
+		// 3. then set the vertex attributes pointers (for positions and colors)
+		// TODO: Add handling various shaders inputs to be able to handle shaders with and without colors
+
+		// Set vertices positions
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *) 0);
 		glEnableVertexAttribArray(0);
+
+		// Set vertices colors
+		// A color appears every 6 floats and its stride is the size of 3 floats from the beginning of an array
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *) (3 * sizeof(float)));
+		glEnableVertexAttribArray(1);
 
 		// 4. Bind Element Buffer Object (EBO)
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh.EBO);
@@ -49,26 +57,26 @@ namespace Rendering_GL
 
 		// Declare vertex shader and compile it
 		//TODO: create a shader class/struct and a system for shader compilation
-		shader.vertexShaderHandle = glCreateShader(GL_VERTEX_SHADER);
-		glShaderSource(shader.vertexShaderHandle, 1, &vertexSrc, NULL);
-		glCompileShader(shader.vertexShaderHandle);
+		unsigned int vertexShaderHandle = glCreateShader(GL_VERTEX_SHADER);
+		glShaderSource(vertexShaderHandle, 1, &vertexSrc, NULL);
+		glCompileShader(vertexShaderHandle);
 		// Check if shader was compiled successfully
-		CheckShaderCompilationStatus(shader.vertexShaderHandle);
+		CheckShaderCompilationStatus(vertexShaderHandle);
 
 		// Compile fragment shader
-		shader.fragmentShaderHandle = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(shader.fragmentShaderHandle, 1, &fragmentSrc, NULL);
-		glCompileShader(shader.fragmentShaderHandle);
-		CheckShaderCompilationStatus(shader.fragmentShaderHandle);
+		unsigned int fragmentShaderHandle = glCreateShader(GL_FRAGMENT_SHADER);
+		glShaderSource(fragmentShaderHandle, 1, &fragmentSrc, NULL);
+		glCompileShader(fragmentShaderHandle);
+		CheckShaderCompilationStatus(fragmentShaderHandle);
 
 		shader.shaderProgramHandle = glCreateProgram();
-		glAttachShader(shader.shaderProgramHandle, shader.vertexShaderHandle);
-		glAttachShader(shader.shaderProgramHandle, shader.fragmentShaderHandle);
+		glAttachShader(shader.shaderProgramHandle, vertexShaderHandle);
+		glAttachShader(shader.shaderProgramHandle, fragmentShaderHandle);
 		glLinkProgram(shader.shaderProgramHandle);
 
 		// Delete shader objects as they are not needed after being linked into the program
-		glDeleteShader(shader.vertexShaderHandle);
-		glDeleteShader(shader.fragmentShaderHandle);
+		glDeleteShader(vertexShaderHandle);
+		glDeleteShader(fragmentShaderHandle);
 	}
 
 	void RenderingPreProcessor::CheckShaderCompilationStatus(const unsigned int &shaderHandle)
