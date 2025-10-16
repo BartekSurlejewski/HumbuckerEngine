@@ -21,6 +21,7 @@
   <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="CppSandbox" targetName="update_mappings" />
+      <config projectName="CppSandbox" targetName="glm" />
       <config projectName="CppSandbox" targetName="glad-generate-files" />
       <config projectName="CppSandbox" targetName="HumbuckerEngine" />
       <config projectName="CppSandbox" targetName="uninstall" />
@@ -35,11 +36,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9ed4bd6-2af5-482f-a9df-ac4815e069f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/RenderingData.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/RenderingData.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Utils/HumbuckerUtils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Utils/HumbuckerUtils.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/glad-src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/glad-src/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,6 +177,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="glad-generate-files" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CppSandbox" TARGET_NAME="glad-generate-files" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -189,6 +193,11 @@
       </method>
     </configuration>
     <configuration name="glfw" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CppSandbox" TARGET_NAME="glfw" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="glm" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CppSandbox" TARGET_NAME="glm" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -210,6 +219,7 @@
       <item itemvalue="CMake Application.uninstall" />
       <item itemvalue="CMake Application.glfw" />
       <item itemvalue="CMake Application.update_mappings" />
+      <item itemvalue="CMake Application.glm" />
     </list>
   </component>
   <component name="TaskManager">

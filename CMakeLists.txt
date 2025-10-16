@@ -19,6 +19,14 @@ FETCHCONTENT_DECLARE(
 )
 FETCHCONTENT_MAKEAVAILABLE(glad)
 
+# --- GLM ---
+FETCHCONTENT_DECLARE(
+        glm
+        GIT_REPOSITORY https://github.com/g-truc/glm.git
+        GIT_TAG        master
+)
+FETCHCONTENT_MAKEAVAILABLE(glm)
+
 find_package(OpenGL REQUIRED)
 
 include_directories(HumbuckerEngine)
@@ -38,4 +46,4 @@ add_executable(HumbuckerEngine
         HumbuckerEngine/Rendering/OpenGLRenderer/RenderingPreProcessor.h
 )
 
-target_link_libraries(HumbuckerEngine PRIVATE glfw glad OpenGL::GL)
+target_link_libraries(HumbuckerEngine PRIVATE glfw glad glm OpenGL::GL)

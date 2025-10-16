@@ -69,7 +69,6 @@ namespace Rendering_GL
 		float timeValue = glfwGetTime();
 		float colorMultiplier = std::sin(timeValue);
 		shader->setFloat("colorMultiplier", colorMultiplier);
-
 		// Now draw the object
 		glBindVertexArray(mesh.VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
