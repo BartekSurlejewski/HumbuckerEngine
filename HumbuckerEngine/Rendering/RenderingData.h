@@ -55,20 +55,29 @@ namespace Rendering_General
 	public:
 		unsigned int shaderProgramHandle;
 
-		Shader(const std::string &vertexShaderPath, const std::string &fragmentShaderPath)
-		{
-			vertexShaderSource = HumbuckerUtils::GetTextFromFile(vertexShaderPath);
-			fragmentShaderSource = HumbuckerUtils::GetTextFromFile(fragmentShaderPath);
-
-			std::cout << vertexShaderSource << std::endl;
-			std::cout << fragmentShaderSource << std::endl;
-		}
+		Shader(const std::string &vertexShaderPath, const std::string &fragmentShaderPath) : vertexShaderSource(HumbuckerUtils::GetTextFromFile(vertexShaderPath)),
+		                                                                                     fragmentShaderSource(HumbuckerUtils::GetTextFromFile(fragmentShaderPath)) {}
 
 		Shader() {}
 
 		void Use() const
 		{
 			glUseProgram(shaderProgramHandle);
+		}
+
+		void setBool(const std::string &name, bool value) const
+		{
+			glUniform1i(glGetUniformLocation(shaderProgramHandle, name.c_str()), (int) value);
+		}
+
+		void setInt(const std::string &name, int value) const
+		{
+			glUniform1i(glGetUniformLocation(shaderProgramHandle, name.c_str()), value);
+		}
+
+		void setFloat(const std::string &name, float value) const
+		{
+			glUniform1f(glGetUniformLocation(shaderProgramHandle, name.c_str()), value);
 		}
 
 		[[nodiscard]] std::string getVertexShaderSource() const { return vertexShaderSource; }

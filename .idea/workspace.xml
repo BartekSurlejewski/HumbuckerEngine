@@ -35,18 +35,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9ed4bd6-2af5-482f-a9df-ac4815e069f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Shaders/DefaultShader.frag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HumbuckerEngine/Shaders/DefaultShader.vert" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Renderer_OpenGL.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Renderer_OpenGL.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/RenderingPreProcessor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/RenderingPreProcessor.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Rendering/RenderingData.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Rendering/RenderingData.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Utils/HumbuckerUtils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Utils/HumbuckerUtils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumbuckerEngine/Utils/HumbuckerUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumbuckerEngine/Utils/HumbuckerUtils.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/glad-src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/glad-src/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +158,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C++",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -181,11 +174,6 @@
   </component>
   <component name="RunManager" selected="CMake Application.HumbuckerEngine">
     <configuration name="HumbuckerEngine" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CppSandbox" TARGET_NAME="HumbuckerEngine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CppSandbox" RUN_TARGET_NAME="HumbuckerEngine">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -240,8 +228,7 @@
       <workItem from="1760430482794" duration="12907000" />
       <workItem from="1760463299626" duration="277000" />
       <workItem from="1760513936582" duration="13739000" />
-      <workItem from="1760604152623" duration="3419000" />
-      <workItem from="1760607616424" duration="2891000" />
+      <workItem from="1760604152623" duration="149000" />
     </task>
     <servers />
   </component>
@@ -259,21 +246,6 @@
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Window_OpenGL.cpp</url>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/RenderingPreProcessor.cpp</url>
-          <line>58</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.cpp</url>
-          <line>67</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/HumbuckerEngine/Rendering/OpenGLRenderer/RenderingPreProcessor.cpp</url>
-          <line>63</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -62,17 +62,13 @@ namespace Rendering_GL
 
 	void Development_OpenGL::Tick()
 	{
-		unsigned int shaderProgramHandle = mesh.getMaterial()->getShader()->shaderProgramHandle;
-
+		Rendering_General::Shader *shader = mesh.getMaterial()->getShader().get();
 		// Use our shader program when we want to render an object
-		glUseProgram(shaderProgramHandle);
+		shader->Use();
 
 		float timeValue = glfwGetTime();
 		float colorMultiplier = std::sin(timeValue);
-		int shaderColorProperty = glGetUniformLocation(shaderProgramHandle, "colorMultiplier");
-		// glUniform4f(shaderColorProperty, colorMultiplier, colorMultiplier, colorMultiplier, 1.0f);
-		glUniform1f(shaderColorProperty, colorMultiplier);
-
+		shader->setFloat("colorMultiplier", colorMultiplier);
 
 		// Now draw the object
 		glBindVertexArray(mesh.VAO);

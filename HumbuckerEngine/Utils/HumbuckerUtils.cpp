@@ -77,7 +77,7 @@ std::vector<int> HumbuckerUtils::Quicksort(const std::vector<int> &numbersToSort
 	return result;
 }
 
-std::string HumbuckerUtils::GetTextFromFile(const std::string& filePath)
+std::string HumbuckerUtils::GetTextFromFile(const std::string &filePath)
 {
 	std::string fileText;
 	std::ifstream file;
@@ -93,12 +93,12 @@ std::string HumbuckerUtils::GetTextFromFile(const std::string& filePath)
 		stringStream << file.rdbuf();
 		file.close();
 		fileText = stringStream.str();
+		std::cout << "File read successfully " << filePath << std::endl;
 	}
 	catch (std::ifstream::failure exception)
 	{
 		std::cout << "Failed to read file " << filePath << std::endl << "Exception: " << exception.what() << std::endl;
 	}
-
 	return fileText;
 }
 
