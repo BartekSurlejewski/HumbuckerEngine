@@ -6,7 +6,7 @@
 
 #include "glad/glad.h"
 #include "Rendering/RenderingData.h"
-#include "Rendering/RenderingPreProcessor.h"
+#include "../RenderingPreProcessor.h"
 
 namespace Rendering_GL
 {
@@ -45,7 +45,7 @@ namespace Rendering_GL
 
 	void Development_OpenGL::PrepareBuffers()
 	{
-		Rendering_General::RenderingPreProcessor::PreprocessMesh(mesh);
+		RenderingPreProcessor::PreprocessMesh(mesh);
 	}
 
 	void Development_OpenGL::RenderTriangle()

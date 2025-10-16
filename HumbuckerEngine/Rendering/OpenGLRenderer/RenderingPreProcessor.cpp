@@ -4,15 +4,15 @@
 
 #include "glad/glad.h"
 
-namespace Rendering_General
+namespace Rendering_GL
 {
-	void RenderingPreProcessor::PreprocessMesh(Mesh &mesh)
+	void RenderingPreProcessor::PreprocessMesh(Rendering_General::Mesh &mesh)
 	{
 		InitVertexBuffers(mesh);
 		CompileShaders(*mesh.getMaterial()->getShader());
 	}
 
-	void RenderingPreProcessor::InitVertexBuffers(Mesh &mesh)
+	void RenderingPreProcessor::InitVertexBuffers(Rendering_General::Mesh &mesh)
 	{
 		// Done once unless the object changes frequently
 		// Generate vertex buffer and pass it to GPU
@@ -39,7 +39,7 @@ namespace Rendering_General
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * indices.size(), indices.data(), GL_STATIC_DRAW);
 	}
 
-	void RenderingPreProcessor::CompileShaders(Shader &shader)
+	void RenderingPreProcessor::CompileShaders(Rendering_General::Shader &shader)
 	{
 		std::string vertexSrcStr = shader.getVertexShaderSource();
 		std::string fragmentSrcStr = shader.getFragmentShaderSource();
