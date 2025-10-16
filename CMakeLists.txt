@@ -30,7 +30,6 @@ FETCHCONTENT_MAKEAVAILABLE(glm)
 find_package(OpenGL REQUIRED)
 
 include_directories(HumbuckerEngine)
-include_directories(HumbuckerEngine/DiningPhilosophers)
 
 add_executable(HumbuckerEngine
         HumbuckerEngine/Application.cpp

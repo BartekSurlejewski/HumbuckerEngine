@@ -47,8 +47,8 @@ namespace Rendering_GL
 			// "FragColor = vec4(vecColor, 1.0);\n"
 			"}\0";
 
-	const std::string vertexShaderPath = "../HumbuckerEngine/Shaders/DefaultShader.vert";
-	const std::string fragmentShaderPath = "../HumbuckerEngine/Shaders/DefaultShader.frag";
+	const std::string vertexShaderPath = "HumbuckerEngine/Shaders/DefaultShader.vert";
+	const std::string fragmentShaderPath = "HumbuckerEngine/Shaders/DefaultShader.frag";
 
 	Rendering_General::Shader shader = Rendering_General::Shader(vertexShaderPath, fragmentShaderPath);
 	Rendering_General::Material material = Rendering_General::Material(std::make_shared<Rendering_General::Shader>(shader));
