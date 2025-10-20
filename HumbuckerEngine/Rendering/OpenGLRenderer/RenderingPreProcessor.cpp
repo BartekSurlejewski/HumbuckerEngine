@@ -1,8 +1,8 @@
 #include "RenderingPreProcessor.h"
-
 #include <iostream>
-
 #include "glad/glad.h"
+#include "../RenderingData.h"
+
 
 namespace Rendering_GL
 {
@@ -52,8 +52,8 @@ namespace Rendering_GL
 		std::string vertexSrcStr = shader.getVertexShaderSource();
 		std::string fragmentSrcStr = shader.getFragmentShaderSource();
 
-		const char* vertexSrc = vertexSrcStr.c_str();
-		const char* fragmentSrc = fragmentSrcStr.c_str();
+		const char *vertexSrc = vertexSrcStr.c_str();
+		const char *fragmentSrc = fragmentSrcStr.c_str();
 
 		// Declare vertex shader and compile it
 		//TODO: create a shader class/struct and a system for shader compilation

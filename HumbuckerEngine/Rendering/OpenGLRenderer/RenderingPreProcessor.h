@@ -1,5 +1,10 @@
 #pragma once
-#include "../RenderingData.h"
+
+namespace Rendering_General
+{
+	struct Shader;
+	struct Mesh;
+}
 
 namespace Rendering_GL
 {

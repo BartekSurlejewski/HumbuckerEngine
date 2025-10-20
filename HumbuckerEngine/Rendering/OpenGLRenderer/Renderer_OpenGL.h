@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include <memory>
-
 #include "Window_OpenGL.h"
-#include "../../EngineModules/IRenderer.h"
-#include "EngineModules/IInputManager.h"
+#include "EngineModules/IRenderer.h"
+
+class IInputManager;
 
 namespace Rendering_GL
 {

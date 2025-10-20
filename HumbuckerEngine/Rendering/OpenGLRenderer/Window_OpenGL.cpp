@@ -1,8 +1,6 @@
 #include "Window_OpenGL.h"
-
 #include <iostream>
 #include <ostream>
-
 #include "Utils/Settings.h"
 
 int Rendering_GL::Window_OpenGL::Init()

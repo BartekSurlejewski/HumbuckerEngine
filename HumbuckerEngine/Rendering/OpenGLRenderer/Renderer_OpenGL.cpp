@@ -1,7 +1,7 @@
-﻿#include "Renderer_OpenGL.h"
+﻿#include "glad/glad.h"
 
+#include "Renderer_OpenGL.h"
 #include <iostream>
-
 #include "Dev/Development_OpenGL.h"
 #include "Input/InputManager_OpenGL.h"
 #include "Utils/Settings.h"

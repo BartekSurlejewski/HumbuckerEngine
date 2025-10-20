@@ -1,6 +1,5 @@
 #pragma once
 #include <map>
-
 #include "EngineModules/IInputManager.h"
 #include "GLFW/glfw3.h"
 

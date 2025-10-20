@@ -1,10 +1,8 @@
 #include "Development_OpenGL.h"
-
 #include <complex>
 #include <iostream>
 #include <string>
-
-#include "glad/glad.h"
+// #include "glad/glad.h"
 #include "Rendering/RenderingData.h"
 #include "../RenderingPreProcessor.h"
 #include "GLFW/glfw3.h"
