@@ -8,7 +8,7 @@ namespace Rendering_General
 
 namespace Rendering_GL
 {
-	class RenderingPreProcessor
+	class RenderingPreProcessor_OpenGL
 	{
 	public:
 		static void PreprocessMesh(Rendering_General::Mesh &mesh);

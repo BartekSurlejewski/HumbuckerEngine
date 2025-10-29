@@ -1,4 +1,4 @@
-#include "RenderingPreProcessor.h"
+#include "RenderingPreProcessor_OpenGL.h"
 #include <iostream>
 #include "glad/glad.h"
 #include "../RenderingData.h"
@@ -6,13 +6,13 @@
 
 namespace Rendering_GL
 {
-	void RenderingPreProcessor::PreprocessMesh(Rendering_General::Mesh &mesh)
+	void RenderingPreProcessor_OpenGL::PreprocessMesh(Rendering_General::Mesh &mesh)
 	{
 		InitVertexBuffers(mesh);
 		CompileShaders(*mesh.getMaterial()->getShader());
 	}
 
-	void RenderingPreProcessor::InitVertexBuffers(Rendering_General::Mesh &mesh)
+	void RenderingPreProcessor_OpenGL::InitVertexBuffers(Rendering_General::Mesh &mesh)
 	{
 		// Done once unless the object changes frequently
 		// Generate vertex buffer and pass it to GPU
@@ -47,7 +47,7 @@ namespace Rendering_GL
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * indices.size(), indices.data(), GL_STATIC_DRAW);
 	}
 
-	void RenderingPreProcessor::CompileShaders(Rendering_General::Shader &shader)
+	void RenderingPreProcessor_OpenGL::CompileShaders(Rendering_General::Shader &shader)
 	{
 		std::string vertexSrcStr = shader.getVertexShaderSource();
 		std::string fragmentSrcStr = shader.getFragmentShaderSource();
@@ -79,7 +79,7 @@ namespace Rendering_GL
 		glDeleteShader(fragmentShaderHandle);
 	}
 
-	void RenderingPreProcessor::CheckShaderCompilationStatus(const unsigned int &shaderHandle)
+	void RenderingPreProcessor_OpenGL::CheckShaderCompilationStatus(const unsigned int &shaderHandle)
 	{
 		int success;
 		char infoLog[512];
@@ -95,7 +95,7 @@ namespace Rendering_GL
 		}
 	}
 
-	void RenderingPreProcessor::CheckShaderProgramLinkStatus(const unsigned int &shaderProgramHandle)
+	void RenderingPreProcessor_OpenGL::CheckShaderProgramLinkStatus(const unsigned int &shaderProgramHandle)
 	{
 		int success;
 		char infoLog[512];

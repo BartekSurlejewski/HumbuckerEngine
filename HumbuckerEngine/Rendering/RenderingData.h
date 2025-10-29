@@ -1,10 +1,11 @@
 #pragma once
-#include <iostream>
 #include <memory>
 #include <utility>
 #include <vector>
-
 #include "glad/glad.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include "Utils/HumbuckerUtils.h"
 
 namespace Rendering_General
@@ -78,6 +79,11 @@ namespace Rendering_General
 		void setFloat(const std::string &name, float value) const
 		{
 			glUniform1f(glGetUniformLocation(shaderProgramHandle, name.c_str()), value);
+		}
+
+		void setMat4(const std::string &name, const glm::mat4 &mat) const
+		{
+			glUniformMatrix4fv(glGetUniformLocation(shaderProgramHandle, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
 		}
 
 		[[nodiscard]] std::string getVertexShaderSource() const { return vertexShaderSource; }

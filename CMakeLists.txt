@@ -41,8 +41,10 @@ add_executable(HumbuckerEngine
         HumbuckerEngine/Input/InputManager_OpenGL.h
         HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.cpp
         HumbuckerEngine/Rendering/OpenGLRenderer/Dev/Development_OpenGL.h
-        HumbuckerEngine/Rendering/OpenGLRenderer/RenderingPreProcessor.cpp
-        HumbuckerEngine/Rendering/OpenGLRenderer/RenderingPreProcessor.h
+        HumbuckerEngine/Rendering/OpenGLRenderer/RenderingPreProcessor_OpenGL.cpp
+        HumbuckerEngine/Rendering/OpenGLRenderer/RenderingPreProcessor_OpenGL.h
+        HumbuckerEngine/Utils/ShapesLibrary.cpp
+        HumbuckerEngine/Utils/ShapesLibrary.h
 )
 
 target_link_libraries(HumbuckerEngine PRIVATE glfw glad glm OpenGL::GL)
