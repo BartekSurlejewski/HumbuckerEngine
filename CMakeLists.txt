@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 4.0)
 project(CppSandbox)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 
 include(FetchContent)
 # --- GLFW ---
@@ -15,7 +16,7 @@ FETCHCONTENT_MAKEAVAILABLE(glfw)
 FETCHCONTENT_DECLARE(
         glad
         GIT_REPOSITORY https://github.com/Dav1dde/glad.git
-        GIT_TAG        master
+        GIT_TAG master
 )
 FETCHCONTENT_MAKEAVAILABLE(glad)
 
@@ -23,7 +24,7 @@ FETCHCONTENT_MAKEAVAILABLE(glad)
 FETCHCONTENT_DECLARE(
         glm
         GIT_REPOSITORY https://github.com/g-truc/glm.git
-        GIT_TAG        master
+        GIT_TAG master
 )
 FETCHCONTENT_MAKEAVAILABLE(glm)
 
@@ -45,6 +46,11 @@ add_executable(HumbuckerEngine
         HumbuckerEngine/Rendering/OpenGLRenderer/RenderingPreProcessor_OpenGL.h
         HumbuckerEngine/Utils/ShapesLibrary.cpp
         HumbuckerEngine/Utils/ShapesLibrary.h
+        HumbuckerEngine/SceneLayout/Scene.cpp
+        HumbuckerEngine/SceneLayout/Scene.h
+        HumbuckerEngine/SceneLayout/SceneObject.cpp
+        HumbuckerEngine/SceneLayout/SceneObject.h
+        HumbuckerEngine/SceneLayout/Transform.h
 )
 
 target_link_libraries(HumbuckerEngine PRIVATE glfw glad glm OpenGL::GL)

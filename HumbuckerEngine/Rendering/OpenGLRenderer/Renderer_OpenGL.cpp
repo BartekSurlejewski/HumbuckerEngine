@@ -8,72 +8,76 @@
 
 namespace Rendering_GL
 {
-	void FramebufferSizeCallback(GLFWwindow *window, int width, int height);
+    void FramebufferSizeCallback(GLFWwindow* window, int width, int height);
 
-	int Rendering_GL::Renderer_OpenGL::Init()
-	{
-		// 1. Create and initialize a window
-		window = std::make_unique<Window_OpenGL>();
-		if (window != NULL)
-		{
-			if (window->Init() == -1)
-			{
-				return -1;
-			}
-		}
+    int Rendering_GL::Renderer_OpenGL::Init()
+    {
+        // 1. Create and initialize a window
+        window = std::make_unique<Window_OpenGL>();
+        if (window != NULL)
+        {
+            if (window->Init() == -1)
+            {
+                return -1;
+            }
+        }
 
-		// 2. Initialize GLAD for managing the OpenGL function pointers
-		if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress)))
-		{
-			std::cout << "Failed to initialize GLAD" << std::endl;
-			return -1;
-		}
+        // 2. Initialize GLAD for managing the OpenGL function pointers
+        if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress)))
+        {
+            std::cout << "Failed to initialize GLAD" << std::endl;
+            return -1;
+        }
 
-		// 3. Set the viewport window size
-		glViewport(0, 0, DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT);
-		glfwSetFramebufferSizeCallback(window->getGLFWWindow(), FramebufferSizeCallback);
+        // 3. Set the viewport window size
+        CurrentWindowWidth = DEFAULT_WINDOW_WIDTH;
+        CurrentWindowHeight = DEFAULT_WINDOW_HEIGHT;
+        glViewport(0, 0, DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT);
+        glfwSetFramebufferSizeCallback(window->getGLFWWindow(), FramebufferSizeCallback);
 
-		glEnable(GL_DEPTH_TEST);
+        glEnable(GL_DEPTH_TEST);
 
-		return 0;
-	}
+        return 0;
+    }
 
-	void Rendering_GL::Renderer_OpenGL::Tick()
-	{
-		glClearColor(0.5f, 0.3f, 0.8f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    void Rendering_GL::Renderer_OpenGL::Tick()
+    {
+        glClearColor(0.5f, 0.3f, 0.8f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		// Actual rendering code
-		Development_OpenGL::Tick();
+        // Actual rendering code
+        Development_OpenGL::Tick(CurrentWindowWidth, CurrentWindowHeight);
 
-		glfwSwapBuffers(window->getGLFWWindow());
-		glfwPollEvents();
-	}
+        glfwSwapBuffers(window->getGLFWWindow());
+        glfwPollEvents();
+    }
 
-	void Rendering_GL::Renderer_OpenGL::Terminate()
-	{
-		window->Cleanup();
-		glfwTerminate();
-	}
+    void Rendering_GL::Renderer_OpenGL::Terminate()
+    {
+        window->Cleanup();
+        glfwTerminate();
+    }
 
-	bool Rendering_GL::Renderer_OpenGL::ShouldClose()
-	{
-		return glfwWindowShouldClose(window->getGLFWWindow());
-	}
+    bool Rendering_GL::Renderer_OpenGL::ShouldClose()
+    {
+        return glfwWindowShouldClose(window->getGLFWWindow());
+    }
 
-	std::string Rendering_GL::Renderer_OpenGL::getInfo()
-	{
-		return "OpenGL Renderer\n";
-	}
+    std::string Rendering_GL::Renderer_OpenGL::getInfo()
+    {
+        return "OpenGL Renderer\n";
+    }
 
-	IInputManager *Rendering_GL::Renderer_OpenGL::CreateInputManager() const
-	{
-		return new Input::InputManager_OpenGL(this->window->getGLFWWindow());
-	}
+    IInputManager* Rendering_GL::Renderer_OpenGL::CreateInputManager() const
+    {
+        return new Input::InputManager_OpenGL(this->window->getGLFWWindow());
+    }
 
-	void FramebufferSizeCallback(GLFWwindow *window, int width, int height)
-	{
-		glViewport(0, 0, width, height);
-		std::cout << "Resized window to " << width << "x" << height << std::endl;
-	}
+    void FramebufferSizeCallback(GLFWwindow* window, int width, int height)
+    {
+        glViewport(0, 0, width, height);
+        CurrentWindowHeight = height;
+        CurrentWindowWidth = width;
+        std::cout << "Resized window to " << width << "x" << height << std::endl;
+    }
 }
